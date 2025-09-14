@@ -3,16 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Minha Lista de Tarefas</title>
+  <title>CapCut AI Video Tracker</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>📝 Minhas Tarefas</h1>
-    <input type="text" id="novaTarefa" placeholder="Digite uma tarefa...">
-    <button onclick="adicionarTarefa()">Adicionar</button>
-    <ul id="listaTarefas"></ul>
+    <h1>🎬 CapCut AI Video Tracker</h1>
+
+    <label for="script">Escolha um roteiro:</label>
+    <select id="script">
+      <option value="">-- Selecione --</option>
+      <option value="review">Review de Produto (5 min)</option>
+      <option value="tutorial">Tutorial Rápido (5 min)</option>
+      <option value="motivacao">Vídeo Motivacional (5 min)</option>
+      <option value="custom">Outro (digite abaixo)</option>
+    </select>
+
+    <textarea id="customScript" placeholder="Cole seu roteiro aqui..." style="display:none; margin-top:10px;" rows="4"></textarea>
+
+    <button id="startBtn" disabled>▶️ Iniciar Geração</button>
+
+    <div id="timer" class="hidden">
+      <h2>⏳ Gerando vídeo...</h2>
+      <p>Volte ao CapCut e gere o vídeo com IA usando o roteiro acima.</p>
+      <div id="countdown">5:00</div>
+      <div id="status"></div>
+    </div>
+
+    <div id="done" class="hidden done-box">
+      <h2>✅ VÍDEO PRONTO!</h2>
+      <p>Volte ao CapCut e exporte seu vídeo.</p>
+      <button id="resetBtn">Gerar outro vídeo</button>
+    </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
